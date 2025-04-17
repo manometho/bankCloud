@@ -1,73 +1,111 @@
-# Welcome to your Lovable project
+# Welcome to bankCloud project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/94e9ffe6-ada0-423a-8dcf-80b19a9b69e5
+bankCloud es una aplicación web desarrollada con **Vite**, **React**, **TypeScript**, **Tailwind CSS** y **shadcn-ui**. Este proyecto simula las operaciones básicas de un banco, permitiendo explorar productos financieros como cuentas, préstamos, tarjetas y más.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Tecnologías utilizadas
 
-**Use Lovable**
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/94e9ffe6-ada0-423a-8dcf-80b19a9b69e5) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📦 Instalación y ejecución en local
 
-**Use your preferred IDE**
+Sigue estos pasos para correr el proyecto en tu máquina:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```bash
+# 1. Clona el repositorio
+git clone https://github.com/tu-usuario/bankCloud.git
+cd bankCloud
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# 2. Instala las dependencias
+npm install
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Inicia el servidor de desarrollo
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Esto abrirá el proyecto en `http://localhost:5173` por defecto.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🌍 Despliegue en GitHub Pages
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Para desplegar bankCloud en GitHub Pages:
 
-## What technologies are used for this project?
+### 1. Instala `gh-pages` (solo una vez)
 
-This project is built with:
+```bash
+npm install --save-dev gh-pages
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### 2. Configura la base en `vite.config.ts`
 
-## How can I deploy this project?
+Asegúrate de que el archivo `vite.config.ts` tenga esta línea:
 
-Simply open [Lovable](https://lovable.dev/projects/94e9ffe6-ada0-423a-8dcf-80b19a9b69e5) and click on Share -> Publish.
+```ts
+base: '/bankCloud/', // Nombre exacto del repositorio en GitHub
+```
 
-## Can I connect a custom domain to my Lovable project?
+### 3. Agrega el script en `package.json`
 
-Yes, you can!
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "deploy": "gh-pages -d dist"
+}
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### 4. Ejecuta el despliegue
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```bash
+npm run build
+npm run deploy
+```
+
+### 5. Configura GitHub Pages
+
+En tu repositorio en GitHub:
+
+- Ve a **Settings > Pages**
+- Selecciona la rama `gh-pages` y carpeta `/ (root)`
+- Guarda los cambios
+
+### ✅ Tu sitio estará disponible en:
+
+```
+https://tu-usuario.github.io/bankCloud/
+```
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+bankCloud/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── styles/
+│   └── main.tsx
+├── vite.config.ts
+└── package.json
+```
+
+---
+
+## ✨ Créditos
+
+Este proyecto fue creado como parte de un ejercicio práctico para simular operaciones bancarias y presentar productos financieros de manera clara e interactiva.
+
+---
